@@ -19,6 +19,6 @@ public class Main {
                 j += k;
             }
         }
-        String a = out.toString();
+        System.out.println(out);
     }
 }
