@@ -11,8 +11,8 @@ public class NoofRectangle {
     public static int countGoodRectangles(int[][] rectangles) {
         Map<Integer,Integer> result = new HashMap<>();
         int greatestKey = Integer.MIN_VALUE;
-        for (int i = 0; i < rectangles.length; i++) {
-            int sideLength = Math.min(rectangles[i][0], rectangles[i][1]);
+        for (int[] rectangle : rectangles) {
+            int sideLength = Math.min(rectangle[0], rectangle[1]);
             result.put(sideLength, result.getOrDefault(sideLength, 0) + 1);
             greatestKey = Math.max(greatestKey, sideLength);
         }
