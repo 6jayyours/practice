@@ -7,18 +7,16 @@ public class GreatString {
 
     }
     public static String makeGood(String s) {
-        Stack<Character> result = new Stack<>();
-        for(char c : s.toCharArray()) {
-            if(!result.isEmpty() && Math.abs(c - result.peek()) == 32) {
-                result.pop();
-            } else {
-                result.push(c);
+        int open =0;
+        int closed = 0;
+        for (char c : s.toCharArray()) {
+            if(c == '('){
+                open++;
+            } else if (c == ')'){
+                closed++;
             }
         }
-        StringBuilder abc = new StringBuilder();
-        for(Character c : result) {
-            abc.append(c);
-        }
-        return abc.toString();
+        System.out.println(open+closed);
+        return null;
     }
 }
